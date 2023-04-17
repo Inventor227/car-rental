@@ -1,7 +1,14 @@
 <?php
 session_start();
 include('config.php');
-if(!isset($_SESSION['agency_id']) || $_SESSION['category'] != 'agency'){
+
+// Redirect non-agency users to available cars page
+if($_SESSION['category'] != 'agency'){
+  header("Location: Available_cars_to_rent.php");
+}
+
+// Redirect unauthenticated users to sign-in page
+if(!isset($_SESSION['category']) || $_SESSION['category'] != 'agency'){
   header("Location: signin.php");
 }
 
