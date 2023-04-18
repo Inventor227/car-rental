@@ -37,7 +37,7 @@ mysqli_query($conn, $sql);
   mysqli_query($conn, $sql);
 
   // Redirect to dashboard
-  header("Location: dashboard.php");
+  header("Location: view_booked_cars.php");
   exit();
 }
 
