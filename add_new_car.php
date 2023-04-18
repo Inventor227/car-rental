@@ -2,36 +2,32 @@
 session_start();
 include('config.php');
 
-// Redirect non-agency users to available cars page
 if($_SESSION['category'] != 'agency'){
-  header("Location: Available_cars_to_rent.php");
-}
-
-// Redirect unauthenticated users to sign-in page
-if(!isset($_SESSION['category']) || $_SESSION['category'] != 'agency'){
   header("Location: signin.php");
 }
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if(isset($_POST["submit"])){
   $vehicle_model = $_POST["vehicle_model"];
   $vehicle_number = $_POST["vehicle_number"];
   $seating_capacity = $_POST["seating_capacity"];
   $rent_per_day = $_POST["rent_per_day"];
-
-  $agency_id = $_SESSION['agency_id'];
-
-  $sql = "INSERT INTO cars (vehicle_model, vehicle_number, seating_capacity, rent_per_day, agency_id) 
-          VALUES ('$vehicle_model', '$vehicle_number', '$seating_capacity', '$rent_per_day', '$agency_id')";
-
-  if (mysqli_query($conn, $sql)) {
-    echo "Car added successfully.";
+  
+  if(isset($_SESSION['agency_id'])){
+    $agency_id = $_SESSION['agency_id'];
+    $sql = "INSERT INTO cars (vehicle_model, vehicle_number, seating_capacity, rent_per_day, agency_id) 
+            VALUES ('$vehicle_model', '$vehicle_number', '$seating_capacity', '$rent_per_day', '$agency_id')";
+    
+    if (mysqli_query($conn, $sql)) {
+      echo "Car added successfully.";
+    } else {
+      echo "Error: " . mysqli_error($conn);
+    }
+    
+    mysqli_close($conn);
   } else {
-    echo "Error: " . mysqli_error($conn);
+    echo "Error: Agency ID not set in session.";
   }
-
-  mysqli_close($conn);
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		<input type="text" id="seating_capacity" name="seating_capacity" required><br><br>
 		<label for="rent_per_day">Rent per Day:</label>
 		<input type="text" id="rent_per_day" name="rent_per_day" required><br><br>
-		<input type="submit" value="Add Car">
+		<input type="submit" name="submit" value="Add Car">
 	</form>
 </body>
 </html>

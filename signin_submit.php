@@ -35,6 +35,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['email'] = $email;
             $_SESSION['category'] = $category;
 
+            // Set agency_id session for agency user
+            if ($category == "agency") {
+                $_SESSION['agency_id'] = $row['agency_id'];
+            }
+
             // Redirect to dashboard
             header("Location: dashboard.php");
         } else {
