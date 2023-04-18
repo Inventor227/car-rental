@@ -27,11 +27,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Insert booking details into bookings table
   $user_id = $_SESSION['user_id'];
-  $sql = "INSERT INTO bookings (car_id, user_id, start_date, end_date) VALUES ('$car_id', '$user_id', '$start_date', '$end_date')";
-  mysqli_query($conn, $sql);
+//   $sql = "INSERT INTO bookings (car_id, user_id, start_date, end_date) VALUES ('$car_id', '$user_id', '$start_date', '$end_date')";
+//   mysqli_query($conn, $sql);
 
   // Update is_booked field in cars table to 1
-  $sql = "UPDATE cars SET is_booked=1 WHERE car_id='$car_id'";
+//   $sql = "UPDATE cars SET is_booked=1 customer_id='$user_id' WHERE car_id='$car_id'";
+$sql = "UPDATE cars SET is_booked=1, customer_id='$user_id' WHERE car_id='$car_id'";
+mysqli_query($conn, $sql);
   mysqli_query($conn, $sql);
 
   // Redirect to dashboard
