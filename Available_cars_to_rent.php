@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Update is_booked field in cars table to 1
 //   $sql = "UPDATE cars SET is_booked=1 customer_id='$user_id' WHERE car_id='$car_id'";
-$sql = "UPDATE cars SET is_booked=1, customer_id='$user_id' WHERE car_id='$car_id'";
+$sql = "UPDATE cars SET is_booked=1, customer_id='$user_id',start_date='$start_date',end_date='$end_date' WHERE car_id='$car_id'";
 mysqli_query($conn, $sql);
   mysqli_query($conn, $sql);
 
