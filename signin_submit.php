@@ -39,7 +39,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($category == "agency") {
                 $_SESSION['agency_id'] = $row['agency_id'];
             }
-
+            else{
+                $_SESSION['user_id'] = $row['user_id'];
+            }
             // Redirect to dashboard
             header("Location: dashboard.php");
         } else {

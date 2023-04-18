@@ -17,6 +17,28 @@ if(isset($_SESSION['user_id']) && $_SESSION['category'] == 'customer'){
   $start_date = '<input type="date" name="start_date" required>';
 }
 
+// Process rent car form submission
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Get input values from the form
+  $car_id = $_POST["car_id"];
+  $rent_days = $_POST["rent_days"];
+  $start_date = $_POST["start_date"];
+  $end_date = date('Y-m-d', strtotime($start_date . ' + '.$rent_days.' days'));
+
+  // Insert booking details into bookings table
+  $user_id = $_SESSION['user_id'];
+  $sql = "INSERT INTO bookings (car_id, user_id, start_date, end_date) VALUES ('$car_id', '$user_id', '$start_date', '$end_date')";
+  mysqli_query($conn, $sql);
+
+  // Update is_booked field in cars table to 1
+  $sql = "UPDATE cars SET is_booked=1 WHERE car_id='$car_id'";
+  mysqli_query($conn, $sql);
+
+  // Redirect to dashboard
+  header("Location: dashboard.php");
+  exit();
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -46,7 +68,7 @@ if(isset($_SESSION['user_id']) && $_SESSION['category'] == 'customer'){
 		    echo "<td>" . $row["seating_capacity"] . "</td>";
 		    echo "<td>" . $row["rent_per_day"] . "</td>";
 		    if(isset($_SESSION['user_id']) && $_SESSION['category'] == 'customer'){
-		      echo '<form method="post" action="rent_car.php">';
+		      echo '<form method="post" action="">';
 		      echo '<input type="hidden" name="car_id" value="'.$row["car_id"].'">';
 		      echo '<td>'.$days_dropdown.'</td>';
 		      echo '<td>'.$start_date.'</td>';
@@ -55,10 +77,13 @@ if(isset($_SESSION['user_id']) && $_SESSION['category'] == 'customer'){
 		    }
 		    echo "</tr>";
 		  }
-		} else {
-		  echo "<tr><td colspan='7'>No cars available for rent.</td></tr>";
-		}
-		?>
-	</table>
-</body>
-</html>
+        }
+        else {
+            echo "<tr><td colspan='7'>No cars available for rent.</td></tr>";
+          }
+          ?>
+      </table>
+  </body>
+  </html>
+
+	
