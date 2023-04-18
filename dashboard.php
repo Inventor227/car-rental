@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-// if(!isset($_SESSION['agency_id']) || $_SESSION['category'] != 'agency'){
-//   header("Location: signin.php");
-// }
+if($_SESSION['category'] == 'customer'){
+  header("Location: Available_cars_to_rent.php");
+}
 
 ?>
 
