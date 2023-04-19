@@ -49,7 +49,7 @@ mysqli_query($conn, $sql);
         <li><a href="userprofile.php">View profile</a></li>
 	       </ul>
 		   <ul>
-        <li><a href="view_booked_cars.php">View booked vars</a>View booked cars</li>
+        <li><a href="view_booked_cars.php">View booked cars</a></li>
 	</ul>
 	<h1>Available Cars to Rent</h1>
 	<table>

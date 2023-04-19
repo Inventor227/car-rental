@@ -5,7 +5,6 @@
 </head>
 <body>
 	<h1>Welcome to the Car Rental System</h1>
-	<p>Register as a:</p>
 	<ul>
 	<li><a href="available_cars_withoutlogin.php">View Cars</a></li>
 	<li><a href="signin.php">Signin</a></li>

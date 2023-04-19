@@ -23,7 +23,7 @@ if(isset($_SESSION['user_id']) && $_SESSION['category'] == 'customer'){
 	<title>Available Cars to Rent</title>
 </head>
 <body>
-    
+
 	<h1>Available Cars to Rent</h1>
 	<table>
 		<tr>
@@ -31,10 +31,6 @@ if(isset($_SESSION['user_id']) && $_SESSION['category'] == 'customer'){
 			<th>Vehicle Number</th>
 			<th>Seating Capacity</th>
 			<th>Rent per Day</th>
-			<?php  ?>
-			<th>Number of Days to Rent</th>
-			<th>Start Date</th>
-			<th>Rent Car</th>
 			<?php  ?>
 		</tr>
 		<?php

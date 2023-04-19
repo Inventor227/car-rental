@@ -23,12 +23,15 @@ if(isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'], 'dashboar
 <html>
 <head>
 	<title>Dashboard</title>
+	<ul>
+        <li><a href="signout.php">Signout</a></li>
+	</ul>
 </head>
 <body>
 	<h1>Dashboard</h1>
 	<?php if($_SESSION['category'] == 'agency' && isset($_SESSION['agency_id'])){ ?>
 	<a href="add_new_car.php">Add New Car</a>
-
+	
 	<?php } 
 	
 // if(isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'], 'dashboard.php') !== false) {
