@@ -2,9 +2,9 @@
 <html>
 <head>
 	<title>Car Rental System</title>
+	<?php include('header.php'); ?>
 </head>
 <body>
-	<h1>Welcome to the Car Rental System</h1>
 	<ul>
 	<li><a href="available_cars_withoutlogin.php">View Cars</a></li>
 	<li><a href="signin.php">Signin</a></li>

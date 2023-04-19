@@ -23,9 +23,7 @@ if(isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'], 'dashboar
 <html>
 <head>
 	<title>Dashboard</title>
-	<ul>
-        <li><a href="signout.php">Signout</a></li>
-	</ul>
+	<?php include('headeragency.php'); ?>
 </head>
 <body>
 	<h1>Dashboard</h1>

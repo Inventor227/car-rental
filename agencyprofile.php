@@ -35,6 +35,7 @@ mysqli_close($conn);
 <html>
 <head>
   <title>Profile</title>
+  <?php include('headeragency.php'); ?>
 </head>
 <body>
   <h1>Profile</h1>

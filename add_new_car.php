@@ -35,15 +35,10 @@ if(isset($_POST["submit"])){
 <html>
 <head>
 	<title>Add New Car</title>
+  <?php include('headeragency.php'); ?>
 </head>
 <body>
-<ul>
-        <li><a href="signout.php">Signout</a></li>
-	</ul>
 	<h1>Add New Car</h1>
-  <ul>
-        <li><a href="agencyprofile.php">View profile</a></li>
-	       </ul>
 	<form action="add_new_car.php" method="post">
 		<label for="vehicle_model">Vehicle Model:</label>
 		<input type="text" id="vehicle_model" name="vehicle_model" required><br><br>

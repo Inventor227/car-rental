@@ -14,6 +14,7 @@ $result = mysqli_query($conn, $sql);
 <html>
 <head>
 	<title>View Booked Cars</title>
+	<?php include('headeruser.php'); ?>
 </head>
 <body>
 	<h1>View Booked Cars</h1>
@@ -43,9 +44,6 @@ $result = mysqli_query($conn, $sql);
 		}
 		
 		?>
-		<ul>
-        <li><a href="signout.php">Signout</a></li>
-	</ul>
 	</table>
 </body>
 </html>
