@@ -2,6 +2,7 @@
 session_start();
 include('config.php');
 
+          
 if($_SESSION['category'] != 'agency'){
   header("Location: signin.php");
 }
@@ -36,7 +37,13 @@ if(isset($_POST["submit"])){
 	<title>Add New Car</title>
 </head>
 <body>
+<ul>
+        <li><a href="signout.php">Signout</a></li>
+	</ul>
 	<h1>Add New Car</h1>
+  <ul>
+        <li><a href="agencyprofile.php">View profile</a></li>
+	       </ul>
 	<form action="add_new_car.php" method="post">
 		<label for="vehicle_model">Vehicle Model:</label>
 		<input type="text" id="vehicle_model" name="vehicle_model" required><br><br>

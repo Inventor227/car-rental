@@ -27,9 +27,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Insert booking details into bookings table
   $user_id = $_SESSION['user_id'];
-//   $sql = "INSERT INTO bookings (car_id, user_id, start_date, end_date) VALUES ('$car_id', '$user_id', '$start_date', '$end_date')";
-//   mysqli_query($conn, $sql);
-
   // Update is_booked field in cars table to 1
 //   $sql = "UPDATE cars SET is_booked=1 customer_id='$user_id' WHERE car_id='$car_id'";
 $sql = "UPDATE cars SET is_booked=1, customer_id='$user_id',start_date='$start_date',end_date='$end_date' WHERE car_id='$car_id'";
@@ -48,6 +45,9 @@ mysqli_query($conn, $sql);
 	<title>Available Cars to Rent</title>
 </head>
 <body>
+         <ul>
+        <li><a href="userprofile.php">View profile</a></li>
+	       </ul>
 	<h1>Available Cars to Rent</h1>
 	<table>
 		<tr>

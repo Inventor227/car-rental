@@ -41,7 +41,11 @@ $result = mysqli_query($conn, $sql);
 		} else {
 			echo "<p>No cars have been booked by you yet.</p>";
 		}
+		
 		?>
+		<ul>
+        <li><a href="signout.php">Signout</a></li>
+	</ul>
 	</table>
 </body>
 </html>
