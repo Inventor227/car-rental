@@ -39,11 +39,16 @@ mysqli_close($conn);
   <?php include('headeruser.php'); ?>
 </head>
 <body>
-  <h1>Profile</h1>
-  <p>Name: <?php echo $name; ?></p>
-  <p>Email: <?php echo $email; ?></p>
-  <p>Contact: <?php echo $contact; ?></p>
-  <p>Aadhar: <?php echo $aadhar; ?></p>
-  <p>Address: <?php echo $address; ?></p>
+<div class="row">
+      <div class="col-md-6">
+        <p class="lead"><strong>Name:</strong> <?php echo $name; ?></p>
+        <p class="lead"><strong>Email:</strong> <?php echo $email; ?></p>
+        <p class="lead"><strong>Contact:</strong> <?php echo $contact; ?></p>
+      </div>
+      <div class="col-md-6">
+        <p class="lead"><strong>Aadhar:</strong> <?php echo $aadhar; ?></p>
+        <p class="lead"><strong>Adress:</strong> <?php echo $address; ?></p>
+      </div>
+    </div>
 </body>
 </html>

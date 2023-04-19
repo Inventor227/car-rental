@@ -21,36 +21,40 @@ if(isset($_SESSION['user_id']) && $_SESSION['category'] == 'customer'){
 <html>
 <head>
 	<title>Available Cars to Rent</title>
-    <?php include('header.php'); ?>
+	<?php include('header.php'); ?>
+	<style>
+		.table td, .table th {
+			color: white;
+			border: none;
+		}
+	</style>
 </head>
 <body>
 
 	<h1>Available Cars to Rent</h1>
-	<table>
-		<tr>
-			<th>Vehicle Model</th>
-			<th>Vehicle Number</th>
-			<th>Seating Capacity</th>
-			<th>Rent per Day</th>
-			<?php  ?>
-		</tr>
-		<?php
-		if (mysqli_num_rows($result) > 0) {
-		  while($row = mysqli_fetch_assoc($result)) {
-		    echo "<tr>";
-		    echo "<td>" . $row["vehicle_model"] . "</td>";
-		    echo "<td>" . $row["vehicle_number"] . "</td>";
-		    echo "<td>" . $row["seating_capacity"] . "</td>";
-		    echo "<td>" . $row["rent_per_day"] . "</td>";
-		    echo "</tr>";
-		  }
-        }
-        else {
-            echo "<tr><td colspan='7'>No cars available for rent.</td></tr>";
-          }
-          ?>
-      </table>
-  </body>
-  </html>
-
-	
+	<?php if (mysqli_num_rows($result) > 0) { ?>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Vehicle Model</th>
+					<th>Vehicle Number</th>
+					<th>Seating Capacity</th>
+					<th>Rent per Day</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php while($row = mysqli_fetch_assoc($result)) { ?>
+					<tr>
+						<td><?php echo $row["vehicle_model"]; ?></td>
+						<td><?php echo $row["vehicle_number"]; ?></td>
+						<td><?php echo $row["seating_capacity"]; ?></td>
+						<td><?php echo $row["rent_per_day"]; ?></td>
+					</tr>
+				<?php } ?>
+			</tbody>
+		</table>
+	<?php } else { ?>
+		<p>No cars available for rent.</p>
+	<?php } ?>
+</body>
+</html>

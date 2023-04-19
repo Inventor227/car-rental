@@ -38,12 +38,19 @@ mysqli_close($conn);
   <?php include('headeragency.php'); ?>
 </head>
 <body>
-  <h1>Profile</h1>
-  <p>Name: <?php echo $name; ?></p>
-  <p>Email: <?php echo $email; ?></p>
-  <p>Contact: <?php echo $contact; ?></p>
-  <p>Address: <?php echo $address; ?></p>
-  <p>pan: <?php echo $pan; ?></p>
-  <a href="signout.php">Sign out</a>
+<h1 class="my-5">Profile</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <p class="lead"><strong>Name:</strong> <?php echo $name; ?></p>
+        <p class="lead"><strong>Email:</strong> <?php echo $email; ?></p>
+        <p class="lead"><strong>Contact:</strong> <?php echo $contact; ?></p>
+      </div>
+      <div class="col-md-6">
+        <p class="lead"><strong>Address:</strong> <?php echo $address; ?></p>
+        <p class="lead"><strong>PAN:</strong> <?php echo $pan; ?></p>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

@@ -28,7 +28,10 @@ if(isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'], 'dashboar
 <body>
 	<h1>Dashboard</h1>
 	<?php if($_SESSION['category'] == 'agency' && isset($_SESSION['agency_id'])){ ?>
-	<a href="add_new_car.php">Add New Car</a>
+		<div class="container">
+<ul class="list-unstyled d-flex justify-content-between my-4">
+	<li><a href="add_new_car.php"><button class="btn btn-primary">Add cars</button></a></li>
+</ul>
 	
 	<?php } 
 	

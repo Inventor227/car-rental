@@ -38,17 +38,27 @@ if(isset($_POST["submit"])){
   <?php include('headeragency.php'); ?>
 </head>
 <body>
-	<h1>Add New Car</h1>
-	<form action="add_new_car.php" method="post">
-		<label for="vehicle_model">Vehicle Model:</label>
-		<input type="text" id="vehicle_model" name="vehicle_model" required><br><br>
-		<label for="vehicle_number">Vehicle Number:</label>
-		<input type="text" id="vehicle_number" name="vehicle_number" required><br><br>
-		<label for="seating_capacity">Seating Capacity:</label>
-		<input type="text" id="seating_capacity" name="seating_capacity" required><br><br>
-		<label for="rent_per_day">Rent per Day:</label>
-		<input type="text" id="rent_per_day" name="rent_per_day" required><br><br>
-		<input type="submit" name="submit" value="Add Car">
-	</form>
+<div class="container mt-5">
+    <h1>Add New Car</h1>
+    <form action="add_new_car.php" method="post">
+      <div class="form-group">
+        <label for="vehicle_model">Vehicle Model:</label>
+        <input type="text" id="vehicle_model" name="vehicle_model" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="vehicle_number">Vehicle Number:</label>
+        <input type="text" id="vehicle_number" name="vehicle_number" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="seating_capacity">Seating Capacity:</label>
+        <input type="text" id="seating_capacity" name="seating_capacity" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="rent_per_day">Rent per Day:</label>
+        <input type="text" id="rent_per_day" name="rent_per_day" class="form-control" required>
+      </div>
+      <button type="submit" name="submit" class="btn btn-primary">Add Car</button>
+    </form>
+  </div>
 </body>
 </html>
