@@ -3,6 +3,15 @@
 <head>
 	<title>Car Rental System</title>
 	<?php include('links.php'); ?>
+    <style>
+		body {
+			background-image: url("images/agency.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+            background-position: center center;
+            color: white;
+		}
+	</style>
 </head>
 <body>
 <h1>Welcome to the Car Rental System</h1>

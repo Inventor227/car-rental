@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Sign In</title>
+	<?php include('header.php'); ?>
 </head>
 <body>
 	<h1>Sign In</h1>

@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Car Rental Agency Registration</title>
+	<?php include('header.php'); ?>
 </head>
 <body>
 	<h1>Car Rental Agency Registration</h1>

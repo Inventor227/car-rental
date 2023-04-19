@@ -21,6 +21,7 @@ if(isset($_SESSION['user_id']) && $_SESSION['category'] == 'customer'){
 <html>
 <head>
 	<title>Available Cars to Rent</title>
+    <?php include('header.php'); ?>
 </head>
 <body>
 

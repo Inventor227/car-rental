@@ -45,6 +45,5 @@ mysqli_close($conn);
   <p>Contact: <?php echo $contact; ?></p>
   <p>Aadhar: <?php echo $aadhar; ?></p>
   <p>Address: <?php echo $address; ?></p>
-  <a href="signout.php">Sign out</a>
 </body>
 </html>

@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Customer Registration</title>
+	<?php include('header.php'); ?>
 </head>
 <body>
 	<h1>Customer Registration</h1>
