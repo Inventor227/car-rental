@@ -35,18 +35,7 @@ if(isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'], 'dashboar
 	
 	<?php } 
 	
-// if(isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'], 'dashboard.php') !== false) {
-// 	if (isset($_SESSION['user_id']) || isset($_SESSION['agency_id'])) {
-// 	  unset($_SESSION['user_id']);
-// 	  unset($_SESSION['category']);
-// 	  unset($_SESSION['agency_id']);
-// 	}
-//   }
-		// if (isset($_SESSION['user_id']) ||isset($_SESSION['agency_id']) ) {
-		// 	unset($_SESSION['user_id']);
-		// 	unset($_SESSION['category']);
-		// 	unset($_SESSION['agency_id']);
-		//   }
+
 	?>
 
 </body>

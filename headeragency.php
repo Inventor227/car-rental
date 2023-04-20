@@ -12,6 +12,9 @@
             color: white;
             font-weight:bold;
 		}
+		*{
+			backdrop-filter: blur(5px);
+		}
 	</style>
 </head>
 <body>

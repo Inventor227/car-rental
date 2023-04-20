@@ -2,11 +2,10 @@
 session_start();
 include('config.php');
 
-// Query to fetch all available cars
+
 $sql = "SELECT * FROM cars WHERE is_booked = 0";
 $result = mysqli_query($conn, $sql);
 
-// If user is logged in, display dropdown for number of days and start date
 if(isset($_SESSION['user_id']) && $_SESSION['category'] == 'customer'){
   $days_dropdown = '<select name="rent_days">';
   for($i=1; $i<=7; $i++){

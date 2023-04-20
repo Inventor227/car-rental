@@ -11,6 +11,10 @@
             background-position: center center;
             color: white;
 		}
+		*{
+			backdrop-filter: blur(5px);
+		}
+		
 	</style>
 </head>
 <body>

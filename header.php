@@ -11,11 +11,14 @@
             background-position: center center;
             color: white;
 		}
+		*{
+			backdrop-filter: blur(5px);
+		}
 	</style>
 </head>
 <h1 color="white">Welcome to the Car Rental System</h1>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">Car Rental System</a>
+		<a class="navbar-brand" href="index.php">Car Rental System</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
