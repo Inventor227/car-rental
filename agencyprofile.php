@@ -8,7 +8,7 @@ if (!isset($_SESSION['agency_id'])) {
 
 
 include('config.php');
-
+//fetching details of agency user by fethcing id of current signed in user and matched field  gives us the result
 $agency_id = $_SESSION['agency_id'];
 $sql = "SELECT name, email, contact, address,pan FROM caragency WHERE agency_id = $agency_id";
 $result = mysqli_query($conn, $sql);

@@ -2,7 +2,7 @@
 session_start();
 include('config.php');
 
-          
+ //rechecking if category selected was agency         
 if($_SESSION['category'] != 'agency'){
   header("Location: signin.php");
 }
@@ -12,9 +12,12 @@ if(isset($_POST["submit"])){
   $vehicle_number = $_POST["vehicle_number"];
   $seating_capacity = $_POST["seating_capacity"];
   $rent_per_day = $_POST["rent_per_day"];
-  
+//checking if agency user is signed in or not  
   if(isset($_SESSION['agency_id'])){
     $agency_id = $_SESSION['agency_id'];
+    //query to insert data into cars
+    //we have foreign key of car customer_id equal to primary key of agency therefore when we insert into car 
+    //then it is linked with particular customer 
     $sql = "INSERT INTO cars (vehicle_model, vehicle_number, seating_capacity, rent_per_day, agency_id) 
             VALUES ('$vehicle_model', '$vehicle_number', '$seating_capacity', '$rent_per_day', '$agency_id')";
     
@@ -23,7 +26,7 @@ if(isset($_POST["submit"])){
     } else {
       echo "Error: " . mysqli_error($conn);
     }
-    
+    //closing the connection
     mysqli_close($conn);
   } else {
     echo "Error: Agency ID not set in session.";

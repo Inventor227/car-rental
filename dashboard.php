@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+//if user or agency is not signed in then redirected to signin page
 if(!isset($_SESSION['user_id']) && !isset($_SESSION['agency_id']) ){
   header("Location: signin.php");
 }
@@ -9,7 +9,7 @@ if(!isset($_SESSION['user_id']) && !isset($_SESSION['agency_id']) ){
 if($_SESSION['category'] == 'customer'){
   header("Location: Available_cars_to_rent.php");
 }
-
+//tried that when going back from dashboard to signing page without signing out then session should end
 if(isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'], 'dashboard.php') !== false) {
 	if (isset($_SESSION['user_id']) || isset($_SESSION['agency_id'])) {
 	  unset($_SESSION['user_id']);

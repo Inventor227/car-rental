@@ -5,7 +5,7 @@
 	<?php include('header.php'); ?>
 </head>
 <body>
-<div class="container">
+<div class="container">/
 		<div class="row justify-content-center">
 			<div class="col-md-6">
 				<h1 class="text-center">Sign In</h1>
@@ -21,7 +21,7 @@
 					<div class="form-group">
 						<label for="user_type">User Type:</label>
 						<select class="form-control" id="user_type" name="user_type" required>
-							<option value="">--Select User Type--</option>
+							<option value="">--Select User Type--</option>//to select whether user or agency
 							<option value="customer">Customer</option>
 							<option value="agency">Agency</option>
 						</select>
